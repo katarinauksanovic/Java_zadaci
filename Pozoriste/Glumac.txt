@@ -1,0 +1,17 @@
+package Domaci1;
+
+public class Glumac extends Zaposleni {
+
+	private String nazivUloge;
+
+	public Glumac(String imePrezime, Pozoriste novoPozoriste, String nazivUloge) {
+		super(imePrezime, novoPozoriste);
+		this.nazivUloge = nazivUloge;
+	}
+
+	public String toString() {
+
+		return nazivUloge + "_" + this.getImePrezime() + "[" + this.getPozoriste().getNaziv() + "]";
+	}
+
+}

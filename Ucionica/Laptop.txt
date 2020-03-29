@@ -1,0 +1,56 @@
+package ucionica;
+
+import java.util.ArrayList;
+
+public class Laptop {
+	
+	private ArrayList<Polaznik> noviPolaznik;
+	private String marka;
+	
+	
+		
+	
+	public Laptop(ArrayList<Polaznik> np, String m) { // konstruktor Laptopa 
+		                                              // kreiramo Laptop uz pomoc liste polaznika i marke 
+		this.noviPolaznik = np;
+		this.marka = m;
+	}
+	
+	public String getMarka() { 
+		
+		return marka;
+	}
+	
+	public void dodajPolaznika(Polaznik p) { 
+		
+		noviPolaznik.add(p);
+		
+		
+	}
+	
+	public void ukloniPolaznika( Polaznik p) { 
+		
+		noviPolaznik.remove(p);
+	}
+	
+	
+	
+	public String toString() { 
+		
+		String r = "";
+		
+		for ( int i = 0; i< noviPolaznik.size(); i++) { 
+			
+			if ( i == noviPolaznik.size()-1 ) { 
+				
+				r += noviPolaznik.get(i).toString();
+				
+			}else {
+			r += noviPolaznik.get(i).toString() + ", ";}
+			
+		}
+		
+		return marka + ":"+ "{"+ r +"}";
+	}
+
+}

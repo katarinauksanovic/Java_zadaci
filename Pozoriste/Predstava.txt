@@ -1,0 +1,58 @@
+package Domaci1;
+
+import java.util.ArrayList;
+
+public class Predstava {
+
+	private String nazivPredstave;
+	private Pozoriste nekoPozoriste;
+	private ArrayList<Zaposleni> osoblje;
+
+	public Predstava(String nazivPredstave, Pozoriste nekoPozoriste, ArrayList<Zaposleni> osoblje) {
+		super();
+		this.nazivPredstave = nazivPredstave;
+		this.nekoPozoriste = nekoPozoriste;
+		this.osoblje = osoblje;
+	}
+
+	public void dodajZaposlenog(Zaposleni z) {
+
+		osoblje.add(z);
+
+	}
+
+	public void ukloniZaposlenog(Zaposleni z) {
+
+		for (int i = 0; i < osoblje.size(); i++) {
+
+			if (osoblje.get(i) == z) {
+
+				osoblje.remove(i);
+			}
+		}
+	}
+
+	public String getNazivPredstave() {
+
+		return nazivPredstave;
+	}
+
+	public int getZaposleni() {
+
+		return osoblje.size();
+
+	}
+
+	public String toString() {
+
+		String s = "";
+
+		for (int i = 0; i < osoblje.size(); i++) {
+
+			s += osoblje.get(i) + "\n";
+		}
+
+		return nazivPredstave + "," + this.nekoPozoriste.getNaziv() + "\n" + s;
+	}
+
+}

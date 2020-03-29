@@ -1,0 +1,31 @@
+package Domaci2;
+
+public class GlavniProgramDete {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Dete d1 = new Dete("Milan", "Maric", 12, 4);
+		Dete d2 = new Dete("Ana", "Milic", 7, 3);
+		Dete d3 = new Dete("Bojan", "Djokic", 9, 5);
+		Dete d4 = new Dete("Marija", "Radic", 8, 7);
+		Dete d5 = new Dete("Milos", "Momic", 11, 2);
+
+		System.out.println(Dete.ukupnoKlikera());
+		
+		System.out.println(d2.getBrKlikera());
+		
+		d5.dodajKlikere(4);
+		d4.oduzmiKlikere(1);
+		
+		System.out.println(d5.getBrKlikera());
+		
+		System.out.println(Dete.ukupnoKlikera());
+		System.out.println(Dete.prosek());
+		
+		
+		
+		
+	}
+
+}

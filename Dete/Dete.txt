@@ -1,0 +1,63 @@
+package Domaci2;
+
+public class Dete {
+
+	private String ime;
+	private String prezime;
+	private double brGodina;
+	private int brKlikera;
+	private static int ukupnoKlikera = 0;
+	private static double ukupnoGodina;
+	private static double ukupnoDece=0;
+
+	public Dete(String ime, String prezime, double brGodina, int brKlikera) {
+
+		this.ime = ime;
+		this.prezime = prezime;
+		this.brGodina = brGodina;
+		this.brKlikera = brKlikera;
+		ukupnoKlikera += brKlikera;
+		ukupnoGodina += brGodina;
+        ukupnoDece += 1;
+	}
+
+	public int getBrKlikera() {
+		return brKlikera;
+	}
+
+	public static int ukupnoKlikera() {
+
+		return ukupnoKlikera;
+	}
+
+	public boolean dodajKlikere(int a) {
+
+		if (a > 0) {
+			brKlikera += a;
+			ukupnoKlikera += a;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean oduzmiKlikere(int a) {
+		if (a > 0 && a <= brKlikera) {
+			brKlikera -= a;
+			ukupnoKlikera -= a;
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+	
+	public static double prosek() { 
+		
+		double prosek = ukupnoGodina/ukupnoDece;
+		return prosek;
+	}
+	
+	
+
+}

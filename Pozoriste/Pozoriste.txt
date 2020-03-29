@@ -1,0 +1,30 @@
+package Domaci1;
+
+public class Pozoriste {
+
+	private String naziv;
+	private int id;
+	private static int ukupanId = 0;
+
+	public Pozoriste(String naziv) {
+		super();
+		this.naziv = naziv;
+		id = ukupanId;
+
+		ukupanId += 1;
+	}
+
+	public String getNaziv() {
+		return naziv;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String toString() {
+
+		return naziv + "[" + id + "]";
+	}
+
+}

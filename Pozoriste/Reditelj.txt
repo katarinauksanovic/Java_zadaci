@@ -1,0 +1,18 @@
+package Domaci1;
+
+public class Reditelj extends Zaposleni {
+
+	private String nadimak;
+
+	public Reditelj(String imePrezime, Pozoriste novoPozoriste, String nadimak) {
+		super(imePrezime, novoPozoriste);
+		this.nadimak = nadimak;
+	}
+
+	public String toString() {
+
+		return nadimak + "_" + this.getImePrezime() + "[" + this.getPozoriste().getNaziv() + "]";
+
+	}
+
+}

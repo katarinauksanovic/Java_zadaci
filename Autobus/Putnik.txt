@@ -1,0 +1,46 @@
+package domaci;
+
+public class Putnik extends Covek {
+
+	private double novac;
+
+	public Putnik(String ime, String prezime, double novac) {
+		super(ime, prezime);
+		this.novac = novac;
+	}
+
+	public boolean dodajNovac(double iznos) {
+
+		if (iznos > 0) {
+
+			novac += iznos;
+			return true;
+		} else {
+
+			return false;
+		}
+	}
+	
+	
+	public boolean oduzmiNovac( double iznos) {  
+		
+		if ( iznos > 0 && novac >= iznos) { 
+			
+			novac -= iznos;
+			return true;
+		}
+		else {return false;}
+		
+	}
+	
+    public String toString () { 
+    	
+    	
+    	return this.getIme() + this.getPrezime() + "[" + this.novac + "]";
+    }
+	
+
+	}
+	
+
+

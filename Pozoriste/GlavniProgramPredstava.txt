@@ -1,0 +1,53 @@
+package Domaci1;
+
+import java.util.ArrayList;
+
+public class GlavniProgramPredstava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Pozoriste p1 = new Pozoriste("JDP");
+		Pozoriste p2 = new Pozoriste("BDP");
+
+		Reditelj r1 = new Reditelj("Lidija Dedovic", p1, "Liki");
+		Reditelj r2 = new Reditelj("Egon Savin", p2, "Egs");
+
+		Glumac g1 = new Glumac("Ana Vukcevic", p1, "zena");
+		Glumac g2 = new Glumac("Mirko Vlahovic", p1, "starac");
+		Glumac g3 = new Glumac("Srdjan Grahovac", p1, "momak");
+		Glumac g4 = new Glumac("Dejan Ivanovic", p2, "cistac");
+		Glumac g5 = new Glumac("Gorana Markovic", p2, "pshiholog");
+		
+		ArrayList<Zaposleni> lista1 = new ArrayList<Zaposleni>();
+		
+		lista1.add(r1);
+		lista1.add(g1);
+		lista1.add(g2);
+		lista1.add(g3);
+		
+		ArrayList<Zaposleni> lista2 = new ArrayList<Zaposleni>();
+		
+		lista2.add(r2);
+		lista2.add(g4);
+		lista2.add(g5);
+		lista2.add(g1);
+		lista2.add(g2);
+		
+		Predstava pred1 = new Predstava ("ArtExport", p1, lista1);
+		Predstava pred2 = new Predstava ( "Samoubica", p2, lista2);
+		
+		
+		System.out.println(pred1);
+		System.out.println(pred2);
+		
+		pred2.ukloniZaposlenog(g1);
+		
+		System.out.println(pred2);
+		
+     System.out.println(pred2.getNazivPredstave());
+     System.out.println(p1.getId());
+     System.out.println(p2.getId());
+	}
+
+}

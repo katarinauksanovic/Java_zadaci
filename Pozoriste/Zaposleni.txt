@@ -1,0 +1,28 @@
+package Domaci1;
+
+public class Zaposleni {
+
+	private String imePrezime;
+	private Pozoriste novoPozoriste;
+
+	public Zaposleni(String imePrezime, Pozoriste novoPozoriste) {
+		super();
+		this.imePrezime = imePrezime;
+		this.novoPozoriste = novoPozoriste;
+	}
+
+	public String getImePrezime() {
+		return imePrezime;
+	}
+
+	public Pozoriste getPozoriste() {
+
+		return novoPozoriste;
+	}
+
+	public String toString() {
+
+		return imePrezime + "[" + novoPozoriste.getNaziv() + "]";
+	}
+
+}

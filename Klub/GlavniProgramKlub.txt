@@ -1,0 +1,99 @@
+package vjezbanje;
+
+public class GlavniProgramKlub {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Sportista1 rukometas1 = new Sportista1("Petar", "Kapisoda", 1976);
+		Sportista1 rukometas2 = new Sportista1("Filip", "Marjanovic", 1989);
+		Sportista1 rukometas3 = new Sportista1("Nemanja", "Belos", 1994);
+		Sportista1 rukometas4 = new Sportista1(" Vladimir", "Cupara", 1994);
+		Sportista1 rukometas5 = new Sportista1("Ivan", "Popovic", 1994);
+
+		System.out.println(rukometas1.toString());
+		System.out.println(rukometas2.toString());
+		System.out.println(rukometas3.toString());
+
+		Sportista1[] niz = { rukometas1, rukometas2, rukometas3, rukometas5 };
+		Sportista1[] niz2 = { rukometas2, rukometas3 };
+		Sportista1[] niz3 = { rukometas1, rukometas4, rukometas5 };
+		Sportista1[] niz4 = { rukometas2, rukometas3, rukometas4, rukometas5 };
+		Sportista1[] niz5 = { rukometas3, rukometas4, rukometas5 };
+		Sportista1[] niz6 = { rukometas1, rukometas4, rukometas5 };
+
+		Sportista1[] sviSportisti = { rukometas1, rukometas2, rukometas3, rukometas4, rukometas5 };
+
+		Klub klub1 = new Klub("RK Vojvodina", "Novi Sad", 1948, niz2);
+		Klub klub2 = new Klub("RK Metaloplastika", "Sabac", 1958, niz3);
+		Klub klub3 = new Klub("RK Zajecar", "Zajecar", 1949, niz);
+		Klub klub4 = new Klub("RK Kolubara", "Lazarevac", 1960, niz6);
+		Klub klub5 = new Klub("RK Rudar", "Kostolac", 1970, niz5);
+
+		Klub[] sviKlubovi = { klub1, klub2, klub3, klub4, klub5 };
+
+		niz[1].getIme();
+		niz[2].getPrezime();
+
+		System.out.println(niz[1].getIme());
+
+		String k = rukometas1.getIme() + ", " + rukometas2.getIme() + ", " + rukometas3.getIme();
+		String m = klub1.getNaziv();
+		String w = rukometas3.toString();
+
+		System.out.println(k);
+		System.out.println(m);
+		System.out.println(w);
+
+		System.out.println(klub1);
+
+		System.out.println("Ceo klub je kupljen od strane drugog kluba. Unesite novi klub:");
+
+		klub1.setNaziv("RK Partizan");
+
+		System.out.println(klub1.getNaziv());
+
+		// String r = "";
+		// for ( int i=0; i< niz.length; i++ ) {
+
+		// r += niz[i].toString() + "\n";
+
+		// }
+
+		// System.out.print("Igraci kluba RK Vojvodina su: "+ "\n" + r + " ");
+
+		// String x = "";
+
+		// for ( int i=0; i<sviKlubovi.length; i++) {
+
+		// x += sviKlubovi[i].getNaziv() + "\n";
+
+		// }System.out.println("Petar Kapisoda igrao je u sledecim klubovima: " + "\n" +
+		// x );
+
+		Klub[] nizKapisoda = new Klub[sviKlubovi.length];
+		int brojac = 0;
+
+		for (int i = 0; i < sviKlubovi.length; i++) {
+
+			for (int j = 0; j < sviKlubovi[i].getSPORTISTA().length; j++) {
+
+				if (rukometas1== sviKlubovi[i].getSPORTISTA()[j]) {
+
+					nizKapisoda[brojac] = sviKlubovi[i];
+					brojac++;
+
+				}
+
+			}
+
+		}
+        System.out.println("Klubovi u kojima je igrao Kapisoda su: ");
+		for (int i = 0; i < brojac; i++) {
+
+			System.out.println(nizKapisoda[i].getNaziv() + "\n");
+
+		}
+	}
+
+}
